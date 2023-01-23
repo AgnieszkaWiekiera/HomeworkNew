@@ -8,22 +8,42 @@ import static org.junit.jupiter.api.Assertions.*;
 class OddAndEvenNumbersTest {
 
     @Test
-    void shouldGetOdd() {
+    void shouldGetTrueEven() {
         //given
-        int number = 41;
+        int number = 8;
         //when
-        String getEvenOrOdd = OddAndEvenNumbers.getEvenOrOdd(41);
+        boolean isEven = OddAndEvenNumbers.isEven(8);
         //then
-        Assertions.assertEquals("nieparzysta", getEvenOrOdd);
+        Assertions.assertEquals(true, isEven);
     }
 
     @Test
-    void shouldGetEven() {
+    void shouldGetFalseEven() {
         //given
-        int number = 506;
+        int number = 77;
         //when
-        String getEvenOrOdd = OddAndEvenNumbers.getEvenOrOdd(506);
+        boolean isEven = OddAndEvenNumbers.isEven(77);
         //then
-        Assertions.assertEquals("parzysta", getEvenOrOdd);
+        Assertions.assertEquals(false, isEven);
+    }
+
+    @Test
+    void shouldGetTrueOdd() {
+        //given
+        int number = 43;
+        //when
+        boolean isOdd = OddAndEvenNumbers.isOdd(43);
+        //then
+        Assertions.assertEquals(true, isOdd);
+    }
+
+    @Test
+    void shouldGetFalseOdd() {
+        //given
+        int number = 12;
+        //when
+        boolean isOdd = OddAndEvenNumbers.isOdd(12);
+        //then
+        Assertions.assertEquals(false, isOdd);
     }
 }
