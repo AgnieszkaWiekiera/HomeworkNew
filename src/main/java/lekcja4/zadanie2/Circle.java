@@ -2,7 +2,7 @@ package lekcja4.zadanie2;
 
 public class Circle extends Shape{
 
-    private static final double PI_NUMBER = 3.14;
+    private static final double PI = 3.14;
     private final int radius;
 
     public Circle(int radius) {
@@ -11,11 +11,11 @@ public class Circle extends Shape{
 
     @Override
     public double getArea() {
-        return PI_NUMBER * radius * radius;
+        return PI * radius * radius;
     }
 
     @Override
     public double getPerimeter() {
-        return 2 * PI_NUMBER * radius;
+        return 2 * PI * radius;
     }
 }

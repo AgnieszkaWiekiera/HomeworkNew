@@ -1,5 +1,4 @@
 package lekcja4.zadanie2;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

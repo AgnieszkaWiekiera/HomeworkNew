@@ -1,13 +1,14 @@
 package lekcja4.zadanie2;
 
 public class Rectangular extends Shape{
-    protected final int sideA;
-    protected final int sideB;
+    private final int sideA;
+    private final int sideB;
 
     public Rectangular(int sideA, int sideB) {
         this.sideA = sideA;
         this.sideB = sideB;
     }
+
     @Override
     public double getArea() {
         return sideA * sideB;
@@ -16,5 +17,4 @@ public class Rectangular extends Shape{
     public double getPerimeter() {
         return 2 * sideA + 2 * sideB;
     }
-
 }

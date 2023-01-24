@@ -10,7 +10,7 @@ class SguareTest {
     @Test
     void shouldCalculateArea() {
         //given
-        Sguare square = new Sguare(2, 2);
+        Sguare square = new Sguare(2);
         //when
         double actualArea = square.getArea();
         //then
@@ -20,7 +20,7 @@ class SguareTest {
     @Test
     void getPerimeter() {
         //given
-        Sguare sguare = new Sguare(3,3);
+        Sguare sguare = new Sguare(3);
         //when
         double actualPerimeter = sguare.getPerimeter();
         //then
