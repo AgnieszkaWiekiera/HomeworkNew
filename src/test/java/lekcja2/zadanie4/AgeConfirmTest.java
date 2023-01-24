@@ -12,9 +12,9 @@ class AgeConfirmTest {
         //given
         int userAge = 20;
         //when
-        String printPermission = AgeConfirm.printPermission(20);
+        String getAgeDescription = AgeConfirm.getAgeDescription(20);
         //then
-        Assertions.assertEquals("Pełnoletni", printPermission);
+        Assertions.assertEquals("Pełnoletni", getAgeDescription);
     }
 
     @Test
@@ -22,18 +22,18 @@ class AgeConfirmTest {
         //given
         int userAge = 8;
         //when
-        String printPermission = AgeConfirm.printPermission(8);
+        String getAgeDescription = AgeConfirm.getAgeDescription(8);
         //then
-        Assertions.assertEquals("Niepełnoletni", printPermission);
+        Assertions.assertEquals("Niepełnoletni", getAgeDescription);
     }
 
     @Test
-    void shouldGetMistake() {
+    void shouldGetError() {
         //given
         int userAge = -8;
         //when
-        String printPermission = AgeConfirm.printPermission(-8);
+        String getAgeDescription = AgeConfirm.getAgeDescription(-8);
         //then
-        Assertions.assertEquals("Błąd", printPermission);
+        Assertions.assertEquals("Błąd", getAgeDescription);
     }
 }
