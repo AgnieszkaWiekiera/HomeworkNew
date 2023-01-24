@@ -1,5 +1,4 @@
 package lekcja5.zadanie4;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -67,5 +66,4 @@ class EmployeeTest {
         Assertions.assertNotNull(actualBonus);
         Assertions.assertEquals(bonus, actualBonus);
     }
-
 }

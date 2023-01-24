@@ -15,18 +15,18 @@ public class Employee {
     }
 
     public Employee(String name, String surname, int age) {
-        new Employee(name, surname);
+        this(name, surname);
         this.age = age;
     }
 
     public Employee(String name, String surname, int age, BigDecimal baseSalary) {
-        new Employee(name, surname,age);
-        this.baseSalary = baseSalary;
+        this(name, surname,age);
+        this.baseSalary = baseSalary == null ? BigDecimal.ZERO : baseSalary;
     }
 
     public Employee(String name, String surname, int age, BigDecimal baseSalary, BigDecimal bonus) {
-        new Employee(name, surname, age, baseSalary);
-        this.bonus = bonus;
+        this(name, surname, age, baseSalary);
+        this.bonus = bonus == null ? BigDecimal.ZERO : bonus;
     }
 
     public String getEmployeeInfo() {
