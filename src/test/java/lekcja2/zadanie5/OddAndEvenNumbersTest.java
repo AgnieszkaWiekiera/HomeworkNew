@@ -14,7 +14,7 @@ class OddAndEvenNumbersTest {
         //when
         boolean isEven = OddAndEvenNumbers.isEven(8);
         //then
-        Assertions.assertEquals(true, isEven);
+        Assertions.assertTrue(isEven);
     }
 
     @Test
@@ -24,7 +24,7 @@ class OddAndEvenNumbersTest {
         //when
         boolean isEven = OddAndEvenNumbers.isEven(77);
         //then
-        Assertions.assertEquals(false, isEven);
+        Assertions.assertFalse(isEven);
     }
 
     @Test
@@ -34,7 +34,7 @@ class OddAndEvenNumbersTest {
         //when
         boolean isOdd = OddAndEvenNumbers.isOdd(43);
         //then
-        Assertions.assertEquals(true, isOdd);
+        Assertions.assertTrue(isOdd);
     }
 
     @Test
@@ -44,6 +44,6 @@ class OddAndEvenNumbersTest {
         //when
         boolean isOdd = OddAndEvenNumbers.isOdd(12);
         //then
-        Assertions.assertEquals(false, isOdd);
+        Assertions.assertFalse(isOdd);
     }
 }
