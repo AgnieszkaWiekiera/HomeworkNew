@@ -1,24 +1,21 @@
 package lekcja6.zadanie3;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class FileCharacterCounter {
-    public static void main(String[] args) {
-        try {
-            File file = new File("data.txt");
-            FileInputStream fileInputStream = new FileInputStream(file);
-            int characterCount = 0;
-            int i;
-            while ((i = fileInputStream.read()) != -1) {
-                characterCount++;
+    public static void count(String fileName) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
+            int characters = 0;
+            while (bufferedReader.readLine() != null) {
+                characters += bufferedReader.readLine().length();
             }
-            System.out.println("Liczba znaków w tekście: " + characterCount);
-            fileInputStream.close();
+            System.out.println("Liczba znaków w pliku: " + characters);
         } catch (IOException e) {
-            System.out.println("Podczas odczytywania pliku wystąpił błąd.");
-            e.printStackTrace();
+            System.out.println("Wystąpił błąd podczas odczytu pliku: " + e.getMessage());
         }
+    }
+
+    public static void main(String[] args) {
+        count("data.txt");
     }
 }
