@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TriangleTest {
 
     @Test
-    void getArea() {
+    void shouldCalculate() {
         //given
         Triangle triangle = new Triangle(3,4, 5, 3);
         //when
@@ -17,7 +17,7 @@ class TriangleTest {
     }
 
     @Test
-    void getPerimeter() {
+    void shouldCalculatePerimeter() {
         //given
         Triangle triangle = new Triangle(3,4, 5, 3);
         //when

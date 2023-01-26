@@ -15,7 +15,7 @@ class RectangularTest {
     }
 
     @Test
-    void getPerimeter() {
+    void shouldCalculatePerimeter() {
         //given
         Rectangular rectangular = new Rectangular(3, 4);
         //when

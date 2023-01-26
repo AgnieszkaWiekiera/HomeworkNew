@@ -3,14 +3,12 @@ package lekcja4.zadanie2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class SguareTest {
+class SquareTest {
 
     @Test
     void shouldCalculateArea() {
         //given
-        Sguare square = new Sguare(2);
+        Square square = new Square(2);
         //when
         double actualArea = square.getArea();
         //then
@@ -18,11 +16,11 @@ class SguareTest {
     }
 
     @Test
-    void getPerimeter() {
+    void shouldCalculatePerimeter() {
         //given
-        Sguare sguare = new Sguare(3);
+        Square square = new Square(3);
         //when
-        double actualPerimeter = sguare.getPerimeter();
+        double actualPerimeter = square.getPerimeter();
         //then
         Assertions.assertEquals(12, actualPerimeter);
     }
