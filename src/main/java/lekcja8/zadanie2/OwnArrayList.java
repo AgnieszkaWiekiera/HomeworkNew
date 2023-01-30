@@ -11,20 +11,24 @@ public class OwnArrayList implements OwnList{
         size = 0;
     }
 
+    @Override
     public int size() {
         return size;
     }
 
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
+    @Override
     public void add(Integer element) {
         ensureCapacity();
         array[size] = element;
         size++;
     }
 
+    @Override
     public Integer get(int i) {
         if (i < 0 || i >= size) {
             throw new IndexOutOfBoundsException();
@@ -44,6 +48,7 @@ public class OwnArrayList implements OwnList{
         size++;
     }
 
+    @Override
     public Integer remove(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
