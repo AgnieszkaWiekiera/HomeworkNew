@@ -10,7 +10,7 @@ class EmployeeTest {
     @Test
     void shouldRetrieveEmployeeDescription() {
         //given
-        Employee employee = new Employee("John", "Smith");
+        Employee employee = new Employee("John", "Smith", BigDecimal.ZERO, BigDecimal.ZERO);
         //when
         String actualEmployeeInfo = employee.getEmployeeInfo();
         //then
