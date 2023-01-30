@@ -4,12 +4,12 @@ import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Person {
-    private String firstName;
-    private String lastName;
-    private int birthYear;
-    private int height;
-    private int weight;
+public class Person implements Comparable<Person>{
+    private final String firstName;
+    private final String lastName;
+    private final int birthYear;
+    private final int height;
+    private final int weight;
 
     public Person(String firstName, String lastName, int birthYear, int height, int weight) {
         this.firstName = firstName;
@@ -42,5 +42,10 @@ public class Person {
     @Override
     public String toString() {
         return firstName + " " + lastName + ", " + birthYear + ", " + height + "cm, " + weight + "kg";
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return Integer.compare(this.birthYear,o.birthYear);
     }
 }

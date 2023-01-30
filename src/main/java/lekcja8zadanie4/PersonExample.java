@@ -19,10 +19,5 @@ public class PersonExample {
         people2.addAll(people);
         System.out.println("\nOd najcięższej do najlżejszej:");
         people2.forEach(System.out::println);
-
-        Set<Person> people3 = new TreeSet<>(Comparator.comparing(Person::getBirthYear));
-        people3.addAll(people);
-        System.out.println("\nOd najmłodszej do najstarszej:");
-        people3.forEach(System.out::println);
     }
 }
