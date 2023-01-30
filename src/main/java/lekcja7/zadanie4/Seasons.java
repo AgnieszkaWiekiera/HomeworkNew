@@ -3,9 +3,6 @@ package lekcja7.zadanie4;
 import java.time.Month;
 
 public class Seasons {
-    public static void main(String[] args) {
-        System.out.println(getSeason(Month.MARCH));
-    }
 
     public static Season getSeason(Month month) {
         switch(month) {
