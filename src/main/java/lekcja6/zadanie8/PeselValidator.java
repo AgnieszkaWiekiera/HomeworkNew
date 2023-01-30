@@ -2,17 +2,21 @@ package lekcja6.zadanie8;
 
 public class PeselValidator {
     public static void main(String[] args) {
-        String pesel = "9708140465r";
+        validatePESEL("9708140465r");
+    }
+
+    public static boolean validatePESEL(String pesel) {
         try {
-            validatePESEL(pesel);
-            System.out.println("PESEL " + pesel + " jest poprawny");
+            validateCorrectData(pesel);
+            return true;
         } catch (WrongTypeOfDataException ex) {
-            System.out.println(ex.getMessage());
+            return false;
         } catch (IllegalLengthException ex) {
-            System.out.println(ex.getMessage());
+            return false;
         }
     }
-    private static void validatePESEL(String pesel) throws WrongTypeOfDataException, IllegalLengthException {
+
+    private static void validateCorrectData(String pesel) throws WrongTypeOfDataException, IllegalLengthException {
         if (!pesel.matches("[0-9]+")) {
             throw new WrongTypeOfDataException("Dozwolone są tylko liczby");
         }
