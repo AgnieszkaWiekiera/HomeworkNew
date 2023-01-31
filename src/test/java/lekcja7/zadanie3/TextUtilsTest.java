@@ -15,8 +15,8 @@ class TextUtilsTest {
     @ParameterizedTest
     @MethodSource("stringProvider")
     public void testStringLength(String input, int expected) {
-        int result = getStringLength(input);
-        assertEquals(expected, result);
+        int textLength = getStringLength(input);
+        assertEquals(expected, textLength);
     }
     private static Stream<Arguments> stringProvider() {
         return Stream.of(
