@@ -1,5 +1,6 @@
 package lekcja7.zadanie3;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -8,7 +9,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static lekcja7.zadanie3.TextUtils.getStringLength;
-import static org.junit.jupiter.api.Assertions.*;
 
 class TextUtilsTest {
 
@@ -16,7 +16,7 @@ class TextUtilsTest {
     @MethodSource("stringProvider")
     public void testStringLength(String input, int expected) {
         int textLength = getStringLength(input);
-        assertEquals(expected, textLength);
+        Assertions.assertEquals(expected, textLength);
     }
     private static Stream<Arguments> stringProvider() {
         return Stream.of(
@@ -27,10 +27,10 @@ class TextUtilsTest {
     }
     @Test
     void shouldThrowExceptionForEmptyInput() {
-        assertThrows(IllegalArgumentException.class, () -> getStringLength(""));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> getStringLength(""));
     }
     @Test
     void shouldThrowExceptionForNullInput() {
-        assertThrows(IllegalArgumentException.class, () -> getStringLength(null));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> getStringLength(null));
     }
 }
