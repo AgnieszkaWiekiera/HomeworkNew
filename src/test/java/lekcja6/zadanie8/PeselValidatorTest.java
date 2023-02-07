@@ -26,4 +26,14 @@ class PeselValidatorTest {
         //then
         Assertions.assertFalse(validatePESEL);
     }
+
+    @Test
+    void shoulGetNotValidPeselWithLetter() {
+        //given
+        String pesel = "6602140456g";
+        //when
+        boolean validatePESEL = PeselValidator.validatePESEL("6602140456g");
+        //then
+        Assertions.assertFalse(validatePESEL);
+    }
 }
