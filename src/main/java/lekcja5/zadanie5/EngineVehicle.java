@@ -3,13 +3,13 @@ package lekcja5.zadanie5;
 public class EngineVehicle extends Vehicle{
     private boolean isStarted;
 
-    private void startEngine() {
+    public void startEngine() {
         if (!isStarted) {
             isStarted = true;
         }
     }
 
-    private void stopEngine() {
+    public void stopEngine() {
         if (isStarted) {
             isStarted = false;
         }
