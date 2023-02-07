@@ -6,9 +6,12 @@ import java.util.stream.Collectors;
 
 public class UniqueLettersUtils {
     public static void printUniqueLetters(List<String> words){
-        System.out.println(words.stream()
+        List<Character> uniqueLetters = words.stream()
                 .map(String::toUpperCase)
-                .flatMap(word -> word.chars().mapToObj(c ->(char)c))
-                .collect(Collectors.toSet()));
+                .flatMap(word -> word.chars().mapToObj(c -> (char) c))
+                .distinct()
+                .collect(Collectors.toList());
+
+        System.out.println(uniqueLetters);
     }
 }
