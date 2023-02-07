@@ -8,7 +8,7 @@ public class FileUtils {
             fileWriter.write(data);
             System.out.println("Utworzono plik " + fileName);
         } catch (IOException e) {
-            System.out.println("Wystąpił błąd podczas tworzenia pliku: " + fileName + e.getMessage());
+            System.out.println("Wystąpił błąd podczas tworzenia pliku: " + fileName + " " + e.getMessage());
         }
     }
 
