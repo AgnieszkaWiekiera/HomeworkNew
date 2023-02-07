@@ -9,7 +9,7 @@ public class Employee {
     private BigDecimal baseSalary;
     private BigDecimal bonus;
 
-    public Employee(String name, String surname, BigDecimal baseSalary, BigDecimal bonus) {
+    public Employee(String name, String surname) {
         this.name = name;
         this.surname = surname;
         this.baseSalary = BigDecimal.ZERO;
@@ -17,7 +17,7 @@ public class Employee {
     }
 
     public Employee(String name, String surname, int age) {
-        this(name, surname, BigDecimal.ZERO, BigDecimal.ZERO);
+        this(name, surname);
         this.age = age;
     }
 
