@@ -15,11 +15,11 @@ public class EngineVehicle extends Vehicle{
         }
     }
 
-    private boolean isEngineStarted() {
+    public boolean isEngineStarted() {
         return isStarted;
     }
 
-    private void setEngineStarted(boolean engineStarted) {
+    public void setEngineStarted(boolean engineStarted) {
         this.isStarted = engineStarted;
     }
 }
