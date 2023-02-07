@@ -1,25 +1,25 @@
 package lekcja5.zadanie5;
 
 public class EngineVehicle extends Vehicle{
-    private boolean engineStarted;
+    private boolean isStarted;
 
-    protected void startEngine() {
-        if (!engineStarted) {
-            engineStarted = true;
+    private void startEngine() {
+        if (!isStarted) {
+            isStarted = true;
         }
     }
 
-    protected void stopEngine() {
-        if (engineStarted) {
-            engineStarted = false;
+    private void stopEngine() {
+        if (isStarted) {
+            isStarted = false;
         }
     }
 
-    public boolean isEngineStarted() {
-        return engineStarted;
+    private boolean isEngineStarted() {
+        return isStarted;
     }
 
-    public void setEngineStarted(boolean engineStarted) {
-        this.engineStarted = engineStarted;
+    private void setEngineStarted(boolean engineStarted) {
+        this.isStarted = engineStarted;
     }
 }
