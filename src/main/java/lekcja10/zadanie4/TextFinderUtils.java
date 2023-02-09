@@ -5,62 +5,46 @@ import java.util.regex.Pattern;
 
 public class TextFinderUtils {
 
-
     public static void main(String[] args) {
         String text = "342\n5.34\n756\n1.234e+07\n7.234243E-02\n6.09\n3457\n87\n1.0001\n3\n5";
-        printIntegerNumbers(text);
-        printDecimalNumbers(text);
-        printScientificNotationNumbers(text);
+        printIntegerDecimalAndScientificNotationNumbers(text);
     }
 
-    public static String printIntegerNumbers(String text) {
-        Pattern pattern = Pattern.compile("\\b\\d+\\b");
-        Matcher matcher = pattern.matcher(text);
-        StringBuilder result = new StringBuilder();
+    public static void printIntegerDecimalAndScientificNotationNumbers(String text) {
+        Pattern patternInteger = Pattern.compile("\\b\\d+\\b");
+        Pattern patternDecimal = Pattern.compile("\\b\\d+\\.\\d+\\b");
+        Pattern patternScientificNotation = Pattern.compile("\\b\\d+\\.\\d+[Ee][+-]\\d+\\b");
 
-        while (matcher.find()) {
-            result.append(matcher.group()).append(",");
+        Matcher matcherInteger = patternInteger.matcher(text);
+        Matcher matcherDecimal = patternDecimal.matcher(text);
+        Matcher matcherScientificNotation = patternScientificNotation.matcher(text);
+
+        StringBuilder resultInteger = new StringBuilder();
+        StringBuilder resultDecimal = new StringBuilder();
+        StringBuilder resultScientificNotation = new StringBuilder();
+
+        while (matcherInteger.find()) {
+            resultInteger.append(matcherInteger.group()).append(", ");
+        }
+        while (matcherDecimal.find()) {
+            resultDecimal.append(matcherDecimal.group()).append(", ");
+        }
+        while (matcherScientificNotation.find()) {
+            resultScientificNotation.append(matcherScientificNotation.group()).append(", ");
         }
 
-        if (result.length() > 0) {
-            result.setLength(result.length() - 1);
+        if (resultInteger.length() > 0) {
+            resultInteger.setLength(resultInteger.length() - 1);
+        }
+        if (resultDecimal.length() > 0) {
+            resultDecimal.setLength(resultDecimal.length() - 1);
+        }
+        if (resultScientificNotation.length() > 0) {
+            resultScientificNotation.setLength(resultScientificNotation.length() - 1);
         }
 
-        System.out.println("Liczby całkowite: " + result.toString());
-        return result.toString();
-    }
-
-    public static String printDecimalNumbers(String text) {
-        Pattern pattern = Pattern.compile("\\b\\d+\\.\\d+\\b");
-        Matcher matcher = pattern.matcher(text);
-        StringBuilder result = new StringBuilder();
-
-        while (matcher.find()) {
-            result.append(matcher.group()).append(",");
-        }
-
-        if (result.length() > 0) {
-            result.setLength(result.length() - 1);
-        }
-
-        System.out.println("Liczby zmiennoprzecinkowe: " + result.toString());
-        return result.toString();
-    }
-
-    public static String printScientificNotationNumbers(String text) {
-        Pattern pattern = Pattern.compile("\\b\\d+\\.\\d+[Ee][+-]\\d+\\b");
-        Matcher matcher = pattern.matcher(text);
-        StringBuilder result = new StringBuilder();
-
-        while (matcher.find()) {
-            result.append(matcher.group()).append(",");
-        }
-
-        if (result.length() > 0) {
-            result.setLength(result.length() - 1);
-        }
-
-        System.out.println("Liczby w notacji naukowej: " + result.toString());
-        return result.toString();
+        System.out.println("Liczby całkowite: " + resultInteger.toString());
+        System.out.println("Liczby zmiennoprzecinkowe: " + resultDecimal.toString());
+        System.out.println("Liczby w notacji naukowej: " + resultScientificNotation.toString());
     }
 }
