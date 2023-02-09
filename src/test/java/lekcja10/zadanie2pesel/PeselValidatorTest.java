@@ -7,23 +7,32 @@ import org.junit.jupiter.api.Test;
 class PeselValidatorTest {
 
     @Test
-    void isPeselCorrect() {
+    void shoulPeselBeCorrect() {
+        //given
         String pesel = "44051401458";
-        boolean isPesel = PeselValidator.isPesel(pesel);
+        //when
+        boolean isPesel = PeselValidator.isValid(pesel);
+        //then
         Assertions.assertTrue(isPesel);
     }
 
     @Test
-    void isPeselIncorrectLength() {
+    void shouldPeselBeIncorrectLength() {
+        //given
         String pesel = "05140145";
-        boolean isPesel = PeselValidator.isPesel(pesel);
+        //when
+        boolean isPesel = PeselValidator.isValid(pesel);
+        //then
         Assertions.assertFalse(isPesel);
     }
 
     @Test
-    void isPeselIncorrectChar() {
+    void shouldPeselBeIncorrectChar() {
+        //given
         String pesel = "4b05140145A";
-        boolean isPesel = PeselValidator.isPesel(pesel);
+        //when
+        boolean isPesel = PeselValidator.isValid(pesel);
+        //then
         Assertions.assertFalse(isPesel);
     }
 }
